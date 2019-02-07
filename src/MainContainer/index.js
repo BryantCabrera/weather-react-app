@@ -12,7 +12,11 @@ class MainContainer extends Component {
 
     render () {
         return (
-            <p>Hi</p>
+            <div>
+                {this.props.forecasts.map((forecast, index) => 
+                    <p key={index}>On {forecast.dt_txt}, the weather was {forecast.weather.description}.  The temperature was {forecast.temp} and the wind speed was {forecast.wind.speed}.</p>
+                )}
+            </div>
         )
     }
 }
