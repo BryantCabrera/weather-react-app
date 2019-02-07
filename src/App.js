@@ -55,10 +55,16 @@ class App extends Component {
     console.log(this.state);
   }
 
+  logout = () => {
+    this.setState({
+      logged: false
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        {this.state.logged ? <MainContainer username={this.state.username} forecasts={this.state.forecasts} /> : <Login login={this.login} />}
+        {this.state.logged ? <MainContainer username={this.state.username} forecasts={this.state.forecasts} logout={this.logout} /> : <Login login={this.login} />}
       </div>
     );
   }
